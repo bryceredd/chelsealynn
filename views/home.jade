@@ -1,0 +1,28 @@
+!!! 5
+html( lang="en", ng-app="chelsealynn", xmlns="http://www.w3.org/1999/xhtml" )
+  head
+    title chelsea lynn portraits
+
+    // Viewport mobile tag for sensible mobile support
+    meta( name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1" )
+
+
+  body( ng-controller="MainCtrl" )
+
+    ng-include( src="mainNav" )
+
+    div
+      ng-view
+
+      div( class="row-fluid" )
+        #footer( class="span12" )
+
+    script(type="text/javascript")
+      window.FB_APP_ID = '#{FB_APP_ID}'
+
+
+    // Javascript from your assets folder are included here
+    script( type="text/javascript")
+      var CKEDITOR_BASEPATH = '/js/ckeditor/';
+
+    != assets.js()
