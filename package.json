@@ -1,0 +1,28 @@
+{
+  "name": "chelsealynn",
+  "version": "0.0.0",
+  "description": "chelsealynn ===========",
+  "main": "app.coffee",
+  "dependencies": {
+    "coffeepot": "~0.0.0",
+    "async": "~0.2.9",
+    "dependable": "~0.2.5",
+    "express": "~3.3.0",
+    "jade": "~0.32.0",
+    "stylus": "~0.33.1"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bryceredd/chelsealynn.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "a6fd5b4f0b8600683b24f2fe994bacdb0a7e0f96"
+}
