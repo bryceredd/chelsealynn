@@ -1,3 +1,64 @@
+a {
+  text-decoration: none;
+  color: #666;
+}
 body {
+  font-family: 'Lato', sans-serif;
+  color: #666;
   background-color: #fff;
+}
+body .login {
+  float: right;
+  padding: 25px 25px 0 0;
+}
+body .title {
+  font-size: 52px;
+  font-weight: 100;
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+.highlight {
+  color: #1cafaa;
+}
+.content {
+  height: 600px;
+}
+.content .images {
+  overflow-x: visible;
+  overflow-y: hidden;
+  width: 100%;
+}
+.content .allImages {
+  width: 10000px;
+}
+.content .allImages img {
+  display: inline-block;
+  float: left;
+  height: 600px;
+  padding: 0 20px 0 20px;
+}
+.nav {
+  clear: both;
+  padding: 10px 0 10px 0;
+}
+.nav ul {
+  list-style-type: none;
+  margin: auto;
+  width: 950px;
+}
+.nav ul li {
+  display: inline;
+  font-size: 40px;
+  font-weight: 100;
+  padding: 0 10px 0 10px;
+}
+.nav ul .selected a {
+  color: #1cafaa;
+}
+footer {
+  color: #bbb;
+  font-size: 12px;
+  padding-top: 40px;
+  text-align: center;
+  width: 100%;
 }

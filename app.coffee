@@ -9,7 +9,7 @@ stylus    = require 'stylus'
 ##
 exports.createServer =  ->
 
-  config.resolve (images) ->
+  config.resolve (images, thumbnail) ->
 
     app = express()
 
@@ -25,8 +25,12 @@ exports.createServer =  ->
     app.get "/image/:directory", images.directory
     app.get "/health", (req, res) -> res.send 200
 
+    app.get '/crop/:width/:height/*', thumbnail.crop
+    app.get '/fit/:width/:height/*', thumbnail.fit
+
     app.get "/", (req, res) -> 
-      res.render 'home'
+      images.read 'home', (err, images) ->
+        res.render 'home', {images}
 
 
 if module == require.main

@@ -1,4 +1,7 @@
 extends layout 
 
 block content
-  div WE GOT HERE
+  .images
+    .allImages
+      each image in images
+        img( src="/fit/10000/600/http://localhost:2442#{image}" )
