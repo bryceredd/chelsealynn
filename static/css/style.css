@@ -3,10 +3,8 @@ a {
   color: #666;
 }
 button {
-  -moz-border-radius: 4px;
   background: none;
   border: none;
-  border-radius: 4px;
 }
 body {
   font-family: 'Lato', sans-serif;
@@ -30,26 +28,28 @@ body .title {
   height: 600px;
 }
 .content .arrow {
+  background-color: rgba(0,0,0,0);
   background-image: url("/img/left.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 75px;
+  height: 600px;
   position: absolute;
-  top: 290px;
-  -webkit-transition: background-image 0.5s ease;
-  -moz-transition: background-image 0.5s ease;
-  -o-transition: background-image 0.5s ease;
-  transition: background-image 0.5s ease;
-  width: 64px;
+  top: 80px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 94px;
 }
 .content .arrow:hover {
   background-image: url("/img/left-down.png");
+  background-color: rgba(0,0,0,0.067);
 }
 .content .left.arrow {
-  left: 30px;
+  left: 0;
 }
 .content .right.arrow {
-  right: 30px;
+  right: 0;
   -moz-transform: scale(-1, 1);
   -webkit-transform: scale(-1, 1);
   -o-transform: scale(-1, 1);
@@ -63,10 +63,10 @@ body .title {
 .content .allImages {
   left: 0px;
   position: relative;
-  -webkit-transition: left 0.5s ease;
-  -moz-transition: left 0.5s ease;
-  -o-transition: left 0.5s ease;
-  transition: left 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   width: 10000px;
 }
 .content .allImages img {
@@ -78,10 +78,10 @@ body .title {
   -moz-opacity: 0.5;
   -o-opacity: 0.5;
   opacity: 0.5;
-  -webkit-transition: opacity 0.5s ease;
-  -moz-transition: opacity 0.5s ease;
-  -o-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .content .allImages img.selected {
   -webkit-opacity: 1;

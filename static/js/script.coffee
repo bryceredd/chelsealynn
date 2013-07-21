@@ -28,4 +28,7 @@ $('.arrow.right').on 'click', ->
   return unless validImage currentImage+1
   setCurrentImage currentImage+1
 
+for image, i in images
+  $(image).on 'click', ((i)-> -> setCurrentImage i)(i)
+
 setCurrentImage 0
