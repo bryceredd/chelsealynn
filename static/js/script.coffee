@@ -1,34 +1,36 @@
 
-currentImage = 0
-images = $('.images img')
+$(document).ready ->
+
+  currentImage = 0
+  images = $ '.images img'
 
 
-move = (pixels) =>
-  $('.allImages').css 'left', "#{pixels}px"
+  move = (pixels) ->
+    $('.allImages').css 'left', "#{pixels}px"
 
-validImage = (num) ->
-  return 0 <= num < images.size()
+  validImage = (num) ->
+    return 0 <= num < images.size()
 
-leftForImage = (num) ->
-  left = $(window).width()/2
-  left -= $(image).width()+20 for image in images.slice 0, num
-  left - (images.eq(num).width()/2)
+  leftForImage = (num) ->
+    left = $(window).width()/2 - 40
+    left -= $(image).width()+40 for image in images.slice 0, num
+    left - (images.eq(num).width()/2)
 
-setCurrentImage = (num) ->
-  currentImage = num
-  images.removeClass 'selected'
-  images.eq(currentImage).addClass 'selected'
-  move leftForImage num
+  setCurrentImage = (num) ->
+    currentImage = num
+    images.removeClass 'selected'
+    images.eq(currentImage).addClass 'selected'
+    move leftForImage num
 
-$('.arrow.left').on 'click', -> 
-  return unless validImage currentImage-1
-  setCurrentImage currentImage-1
+  $('.arrow.left').on 'click', -> 
+    return unless validImage currentImage-1
+    setCurrentImage currentImage-1
 
-$('.arrow.right').on 'click', -> 
-  return unless validImage currentImage+1
-  setCurrentImage currentImage+1
+  $('.arrow.right').on 'click', -> 
+    return unless validImage currentImage+1
+    setCurrentImage currentImage+1
 
-for image, i in images
-  $(image).on 'click', ((i)-> -> setCurrentImage i)(i)
+  #images.each (i, image) ->
+  #  $(image).on 'click', -> setCurrentImage i
 
-setCurrentImage 0
+  setCurrentImage currentImage

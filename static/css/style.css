@@ -74,10 +74,10 @@ body .title {
   float: left;
   height: 600px;
   padding: 0 20px 0 20px;
-  -webkit-opacity: 0.5;
-  -moz-opacity: 0.5;
-  -o-opacity: 0.5;
-  opacity: 0.5;
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  -o-opacity: 0.2;
+  opacity: 0.2;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
