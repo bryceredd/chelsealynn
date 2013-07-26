@@ -47,14 +47,13 @@ body
   color highlight
 
 .content 
-  height 600px
 
   .arrow
     background-color #00000000
     background-image url('/img/left.png')
     background-position center
     background-repeat no-repeat
-    height 600px
+    height 700px
     position absolute
     top 80px
     transition all .5s ease
@@ -79,18 +78,41 @@ body
     left 0px
     position relative
     transition all .5s ease
-    width 10000px
+    width 200000px
 
     img 
       display inline-block
       float left
-      height 600px
-      padding 0 20px 0 20px
+      height 700px
+      margin 0 20px 0 20px
       opacity .2
       transition all .5s ease
+      border 1px #444 solid
 
     img.selected
       opacity 1
+
+.menu 
+  clear both
+  overflow-x scroll
+  height 120px
+  padding-top 20px
+  width 100%
+
+  .allMenu
+    left 0px
+    position relative
+    transition all .5s ease
+    width 200000px
+
+    img 
+      clear none
+      display inline-block
+      float left
+      margin 0 10px 0 10px
+      height 100px
+      border 1px #444 solid
+
 
 .nav 
   clear both

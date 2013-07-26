@@ -24,15 +24,12 @@ body .title {
 .highlight {
   color: #1599ec;
 }
-.content {
-  height: 600px;
-}
 .content .arrow {
   background-color: rgba(0,0,0,0);
   background-image: url("/img/left.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 700px;
   position: absolute;
   top: 80px;
   -webkit-transition: all 0.5s ease;
@@ -67,13 +64,13 @@ body .title {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 10000px;
+  width: 200000px;
 }
 .content .allImages img {
   display: inline-block;
   float: left;
-  height: 600px;
-  padding: 0 20px 0 20px;
+  height: 700px;
+  margin: 0 20px 0 20px;
   -webkit-opacity: 0.2;
   -moz-opacity: 0.2;
   -o-opacity: 0.2;
@@ -82,12 +79,37 @@ body .title {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  border: 1px #444 solid;
 }
 .content .allImages img.selected {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   -o-opacity: 1;
   opacity: 1;
+}
+.menu {
+  clear: both;
+  overflow-x: scroll;
+  height: 120px;
+  padding-top: 20px;
+  width: 100%;
+}
+.menu .allMenu {
+  left: 0px;
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 200000px;
+}
+.menu .allMenu img {
+  clear: none;
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 10px;
+  height: 100px;
+  border: 1px #444 solid;
 }
 .nav {
   clear: both;

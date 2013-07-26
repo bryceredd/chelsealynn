@@ -21,4 +21,5 @@ module.exports = (IMAGE_ROOT) ->
   ###
   directory: (req, res) ->
     fs.readdir (path.join IMAGE_ROOT, req.params.directory), (err, dirs) ->
-      res.send dirs.map (dir) -> "/image/#{req.params.directory}/#{dir}"
+      res.send dirs.map((dir) -> "/image/#{req.params.directory}/#{dir}").filter (i) ->
+        i isnt '.DS_Store'
