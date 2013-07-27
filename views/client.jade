@@ -1,0 +1,13 @@
+extends layout 
+
+block content
+  .client
+    .download 
+      a(href='/client/#{page}/zip') Download all
+      .subtext (large images could take up to an hour to download)
+
+    each image in images
+      a(href="/image/#{image}")
+        img( src="/fit/100/100/#{image}" )
+
+
