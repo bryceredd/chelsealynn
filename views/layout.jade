@@ -7,35 +7,33 @@ html( lang="en", ng-app="chelsealynn", xmlns="http://www.w3.org/1999/xhtml" )
     link( rel='stylesheet', href='/css/style.css' )
 
   body
-    a.login( href="#" ) client login
 
-    .title 
-      | chelsea
-      span.highlight lynn
-      |  portraits
+    .login 
+      a( href="#" ) client login
+      input( type="text" )
 
-    .content 
-      block content
+    a( href="/" )
+      .title
+        | chelsea
+        span.highlight  lynn
+        |  portraits
+
 
     .nav
       block nav
         ul
-          li.selected 
-            a( href="#" ) home
-          li 
-            a( href="#" ) weddings
-          li 
-            a( href="#" ) portraits
-          li 
-            a( href="#" ) facebook
-          li 
-            a( href="#" ) book chelsea
+          each loc in [{name: 'weddings', url: '/weddings'}, {name: 'portraits', url: '/portraits'}, {name: 'facebook', url: 'https://www.facebook.com/pages/Chelsea-Lynn-Portraits/257843164327419'}, {name: 'book chelsea', url:'/bookings'}]
+            li
+              if (page==loc.name)
+                a.active( href='#{loc.url}' )= loc.name
+              else 
+                a( href='#{loc.url}' )= loc.name
+
+    .content 
+      block content
 
   footer Thanks you for visiting!  Hope you enjoyed the images.  <br> All things &copy; 2013 Chelsea Lynn Photography
 
-  //script( src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" )
-  //script( src="http://cdnjs.cloudflare.com/ajax/libs/bacon.js/0.6.1/Bacon.min.js" )
-  //script( src="/js/frp.js" )
   script( src="http://zeptojs.com/zepto.min.js" )
   script( src="/js/script.js" )
 

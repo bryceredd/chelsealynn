@@ -14,9 +14,10 @@ $(document).ready ->
     return 0 <= num < images.size()
 
   leftForImage = (num) ->
+    margin = 40
     left = $(window).width()/2 
-    left -= $(image).width()+40 for image in images.slice 0, num
-    left - (images.eq(num).width()/2)
+    left -= $(image).width()+margin for image in images.slice 0, num
+    left - images.eq(num).width()/2
 
   setCurrentImage = (num) ->
     currentImage = num
@@ -27,7 +28,7 @@ $(document).ready ->
   resizeThumbnailContainer = ->
     width = 0
     menuImages.each (i, image) ->
-      width += $(image).width()+20
+      width += $(image).width()+22
 
     menuContainer.css 'width', width
 
@@ -42,13 +43,25 @@ $(document).ready ->
   images.each (i, image) ->
     $(image).on 'click', -> setCurrentImage i
 
-
-  loaded = 0
   menuImages.each (i, image) ->
     $(image).on 'load', -> 
-      if ++loaded is menuImages.size()-1
-        resizeThumbnailContainer()
+      resizeThumbnailContainer()
 
     $(image).on 'click', -> setCurrentImage i
 
+
+  $('.login').on 'click', (e) ->
+    $('.login').addClass 'focused'
+    $('.login input').focus()
+    e.preventDefault()
+
+  $('.login').on 'keypress', (e) ->
+    input = $('.login input')
+
+    if e.which is 13
+      window.location.href = '/client/'+$('.login input').val()
+      e.preventDefault()
+
+
   setCurrentImage currentImage
+  resizeThumbnailContainer()

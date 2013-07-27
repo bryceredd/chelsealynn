@@ -9,11 +9,27 @@ button {
 body {
   font-family: 'Lato', sans-serif;
   color: #666;
+  padding: 0;
+  margin: 0;
   background-color: #fff;
 }
 body .login {
-  float: right;
   padding: 25px 25px 0 0;
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+}
+body .login input {
+  display: none;
+}
+body .login a {
+  display: inline;
+}
+body .login.focused input {
+  display: inline;
+}
+body .login.focused a {
+  display: none;
 }
 body .title {
   font-size: 52px;
@@ -29,14 +45,14 @@ body .title {
   background-image: url("/img/left.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 700px;
+  height: 600px;
   position: absolute;
-  top: 80px;
+  top: 140px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  width: 94px;
+  width: 194px;
 }
 .content .arrow:hover {
   background-image: url("/img/left-down.png");
@@ -69,8 +85,8 @@ body .title {
 .content .allImages img {
   display: inline-block;
   float: left;
-  height: 700px;
-  margin: 0 20px 0 20px;
+  height: 600px;
+  margin: 0 40px 0 0;
   -webkit-opacity: 0.2;
   -moz-opacity: 0.2;
   -o-opacity: 0.2;
@@ -90,9 +106,11 @@ body .title {
 .menu {
   clear: both;
   overflow-x: scroll;
-  height: 120px;
+  overflow-y: hidden;
+  height: 102px;
+  margin: auto;
   padding-top: 20px;
-  width: 100%;
+  width: 60%;
 }
 .menu .allMenu {
   left: 0px;
@@ -111,11 +129,60 @@ body .title {
   height: 100px;
   border: 1px #444 solid;
 }
+.book {
+  width: 60%;
+  margin: auto;
+}
+.book h1 {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+.book h2 {
+  color: #1599ec;
+  font-weight: 100;
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+}
+.book img {
+  float: right;
+}
+.book ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.book .soft {
+  color: #aaa;
+}
+.client {
+  margin: auto;
+  width: 60%;
+}
+.client img {
+  border: 1px solid #777;
+  margin: 2px;
+}
+.client .download {
+  margin: 20px;
+  text-align: center;
+}
+.client .download .subtext {
+  font-size: 10pt;
+  color: #aaa;
+}
+.client .download a {
+  color: #1599ec;
+  font-size: 24pt;
+  font-weight: 400;
+}
 .nav {
   clear: both;
   padding: 10px 0 10px 0;
+  text-align: center;
 }
 .nav ul {
+  display: block;
   list-style-type: none;
   margin: auto;
   width: 950px;
@@ -126,7 +193,7 @@ body .title {
   font-weight: 100;
   padding: 0 10px 0 10px;
 }
-.nav ul .selected a {
+.nav ul li .active {
   color: #1599ec;
 }
 footer {

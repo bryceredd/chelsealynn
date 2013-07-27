@@ -1,10 +1,10 @@
-fs = require 'fs'
-path = require 'path'
-request = require 'request'
+fs          = require 'fs'
+path        = require 'path'
+request     = require 'request'
 imagemagick = require "imagemagick"
-md5 = require 'MD5'
+md5         = require 'MD5'
 
-module.exports = (RESIZED_PHOTO_PATH) ->
+module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
 
   fit = (req, res) ->
     resize fitImage, req, res
@@ -13,7 +13,14 @@ module.exports = (RESIZED_PHOTO_PATH) ->
     resize cropImage, req, res
 
   resize = (func, req, res) ->
-    url = encodeURI req.params[req.params.length - 1]
+    loc = req.params[req.params.length - 1]
+    url = if loc.match /http/
+      encodeURI loc
+    else 
+      path.join IMAGE_ROOT, loc
+
+    console.log url
+
     size = "#{req.params.width}x#{req.params.height}"
     func url, size, (err, file) ->
       return res.send err, 500 if err?

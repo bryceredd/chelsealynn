@@ -30,12 +30,28 @@ button
 body
   font-family 'Lato', sans-serif
   color #666
+  padding 0
+  margin 0
 
   background-color white 
 
   .login 
-    float right
     padding 25px 25px 0 0
+    position absolute
+    display inline-block
+    right 10px
+
+    input
+      display none
+    a 
+      display inline
+
+  .login.focused
+    input 
+      display inline
+    a
+      display none
+
 
   .title 
     font-size 52px
@@ -53,11 +69,11 @@ body
     background-image url('/img/left.png')
     background-position center
     background-repeat no-repeat
-    height 700px
+    height 600px
     position absolute
-    top 80px
+    top 140px
     transition all .5s ease
-    width 94px
+    width 194px
 
   .arrow:hover
     background-image url('/img/left-down.png')
@@ -80,11 +96,11 @@ body
     transition all .5s ease
     width 200000px
 
-    img 
+    img
       display inline-block
       float left
-      height 700px
-      margin 0 20px 0 20px
+      height 600px
+      margin 0 40px 0 0
       opacity .2
       transition all .5s ease
       border 1px #444 solid
@@ -95,9 +111,11 @@ body
 .menu 
   clear both
   overflow-x scroll
-  height 120px
+  overflow-y hidden
+  height 102px
+  margin auto
   padding-top 20px
-  width 100%
+  width 60%
 
   .allMenu
     left 0px
@@ -113,12 +131,63 @@ body
       height 100px
       border 1px #444 solid
 
+.book 
+  width 60%
+  margin auto
+
+  h1 
+    font-weight 100
+    margin-bottom 0
+
+  h2
+    color highlight
+    font-weight 100
+    font-size 32px
+    padding 0
+    margin 0
+
+  img 
+    float right
+
+  ul 
+    margin 0
+    padding 0
+    list-style-type none
+
+  .soft
+    color #AAA
+
+.client 
+
+  margin auto
+  width 60%
+  
+  img
+    border 1px solid #777
+    margin 2px
+
+  .download 
+
+    margin 20px
+    text-align center
+
+    .subtext
+      font-size 10pt
+      color #AAA
+
+    a
+      color highlight
+      font-size 24pt
+      font-weight 400
+
 
 .nav 
   clear both
   padding 10px 0 10px 0
+  text-align center
 
   ul 
+    display block
     list-style-type none
     margin auto 
     width 950px 
@@ -129,8 +198,8 @@ body
       font-weight 100
       padding 0 10px 0 10px
 
-    .selected a
-      color highlight
+      .active
+        color highlight
 
 footer
   color #bbb
