@@ -49,7 +49,6 @@ $(document).ready ->
 
     $(image).on 'click', -> setCurrentImage i
 
-
   $('.login').on 'click', (e) ->
     $('.login').addClass 'focused'
     $('.login input').focus()

@@ -1,6 +1,14 @@
 extends layout 
 
 block content
+  .images
+      .allImages
+        each image in images
+          img( src="/fit/10000/600/#{image}" )
+
+    button.arrow.left( src="/img/left.png")
+    button.arrow.right( src="/img/left.png") 
+  
   .client
     .download 
       a(href='/client/#{page}/zip') Download all
