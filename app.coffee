@@ -52,8 +52,8 @@ exports.createServer =  ->
         res.render 'myself', {images, page:'about me'}
 
     app.get "/client/:client", (req, res) ->
-      images.read "client/#{req.params.client}", (err, images) ->
-        page = req.params.client
+      page = req.params.client?.toLowerCase()
+      images.read "client/#{page}", (err, images) ->
         res.render 'client', {images, page}
 
 
