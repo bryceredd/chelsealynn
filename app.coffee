@@ -33,19 +33,23 @@ exports.createServer =  ->
 
     app.get "/", (req, res) -> 
       images.read 'home', (err, images) ->
-        res.render 'home', {images, page:'home', port:PORT}
+        res.render 'home', {images, page:'home'}
 
     app.get "/weddings", (req, res) ->
       images.read 'wedding', (err, images) ->
-        res.render 'home', {images, page:'weddings', port:PORT}
+        res.render 'home', {images, page:'weddings'}
 
     app.get "/portraits", (req, res) ->
       images.read 'portrait', (err, images) ->
-        res.render 'home', {images, page:'portraits', port:PORT}
+        res.render 'home', {images, page:'portraits'}
 
     app.get "/bookings", (req, res) ->
       images.read 'booking', (err, images) ->
-        res.render 'book', {images, page:'book chelsea', port:PORT}
+        res.render 'book', {images, page:'book chelsea'}
+
+    app.get "/myself", (req, res) ->
+      images.read 'myself', (err, images) ->
+        res.render 'myself', {images, page:'about me'}
 
     app.get "/client/:client", (req, res) ->
       images.read "client/#{req.params.client}", (err, images) ->
@@ -59,4 +63,5 @@ if module == require.main
   app.listen config.get "PORT"
   console.log """
   Running CHELSEA_LYNN on #{config.get("PORT")}
+  Image root: #{config.get("IMAGE_ROOT")}
   """

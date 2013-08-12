@@ -17,7 +17,7 @@ structure:
   /wedding
   /booking
 ###
-IMAGE_ROOT = process.env.CHELSEA_LYNN_IMAGES || '/Users/bryce/Dropbox/chelsea\ lynn/images'
+IMAGE_ROOT = process.env.CHELSEA_LYNN_IMAGES || '/Users/bryce/Dropbox/chelsealynnportraits.com'
 
 deps.register 'IMAGE_ROOT', IMAGE_ROOT
 deps.register 'ASSETS', path.join __dirname, '/static'

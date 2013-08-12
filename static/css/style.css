@@ -37,6 +37,17 @@ body .title {
   padding: 0 0 10px 0;
   text-align: center;
 }
+h1 {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+h2 {
+  color: #1599ec;
+  font-weight: 100;
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+}
 .highlight {
   color: #1599ec;
 }
@@ -129,30 +140,23 @@ body .title {
   height: 100px;
   border: 1px #444 solid;
 }
-.book {
+.book,
+.myself {
   width: 60%;
   margin: auto;
 }
-.book h1 {
-  font-weight: 100;
-  margin-bottom: 0;
-}
-.book h2 {
-  color: #1599ec;
-  font-weight: 100;
-  font-size: 32px;
-  padding: 0;
-  margin: 0;
-}
-.book img {
+.book img,
+.myself img {
   float: right;
 }
-.book ul {
+.book ul,
+.myself ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.book .soft {
+.book .soft,
+.myself .soft {
   color: #aaa;
 }
 .client {
@@ -195,6 +199,13 @@ body .title {
 }
 .nav ul li .active {
   color: #1599ec;
+}
+.myself .images {
+  float: right;
+  width: 210px;
+}
+.myself .images img {
+  padding: 5px;
 }
 footer {
   color: #bbb;
