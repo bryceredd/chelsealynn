@@ -42,14 +42,14 @@ h1 {
   margin-bottom: 0;
 }
 h2 {
-  color: #1599ec;
+  color: #d4a39c;
   font-weight: 100;
   font-size: 32px;
   padding: 0;
   margin: 0;
 }
 .highlight {
-  color: #1599ec;
+  color: #d4a39c;
 }
 .content .arrow {
   background-color: rgba(0,0,0,0);
@@ -176,7 +176,7 @@ h2 {
   color: #aaa;
 }
 .client .download a {
-  color: #1599ec;
+  color: #d4a39c;
   font-size: 24pt;
   font-weight: 400;
 }
@@ -194,11 +194,11 @@ h2 {
 .nav ul li {
   display: inline;
   font-size: 40px;
-  font-weight: 100;
+  font-weight: 200;
   padding: 0 10px 0 10px;
 }
 .nav ul li .active {
-  color: #1599ec;
+  color: #d4a39c;
 }
 .myself .images {
   float: right;
