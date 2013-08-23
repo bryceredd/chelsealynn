@@ -24,7 +24,9 @@ html( lang="en", ng-app="chelsealynn", xmlns="http://www.w3.org/1999/xhtml" )
         ul
           each loc in [{name: 'weddings', url: '/weddings'}, {name: 'portraits', url: '/portraits'}, {name: 'facebook', url: 'https://www.facebook.com/pages/Chelsea-Lynn-Portraits/257843164327419'}, {name: 'book chelsea', url:'/bookings'}, {name: 'about me', url:'/myself'}]
             li
-              if (page==loc.name)
+              if (loc.name=='facebook')
+                a( href='#{loc.url}', target="_blank")= loc.name
+              else if (page==loc.name)
                 a.active( href='#{loc.url}' )= loc.name
               else 
                 a( href='#{loc.url}' )= loc.name
