@@ -202,12 +202,13 @@ h2 {
 }
 .myself .images {
   float: right;
-  width: 210px;
+  width: 395px;
 }
 .myself .images img {
   padding: 5px;
 }
 footer {
+  clear: both;
   color: #bbb;
   font-size: 12px;
   padding-top: 40px;
