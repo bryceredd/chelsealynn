@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: #666;
+  color: #979797;
 }
 button {
   background: none;
@@ -42,14 +42,14 @@ h1 {
   margin-bottom: 0;
 }
 h2 {
-  color: #d4a39c;
+  color: #fcb03d;
   font-weight: 100;
   font-size: 32px;
   padding: 0;
   margin: 0;
 }
 .highlight {
-  color: #d4a39c;
+  color: #fcb03d;
 }
 .content .arrow {
   background-color: rgba(0,0,0,0);
@@ -176,7 +176,7 @@ h2 {
   color: #aaa;
 }
 .client .download a {
-  color: #d4a39c;
+  color: #fcb03d;
   font-size: 24pt;
   font-weight: 400;
 }
@@ -193,12 +193,12 @@ h2 {
 }
 .nav ul li {
   display: inline;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 200;
   padding: 0 10px 0 10px;
 }
 .nav ul li .active {
-  color: #d4a39c;
+  color: #fcb03d;
 }
 .myself .images {
   float: right;

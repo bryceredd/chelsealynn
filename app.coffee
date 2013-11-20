@@ -35,14 +35,6 @@ exports.createServer =  ->
       images.read 'home', (err, images) ->
         res.render 'home', {images, page:'home'}
 
-    app.get "/weddings", (req, res) ->
-      images.read 'wedding', (err, images) ->
-        res.render 'home', {images, page:'weddings'}
-
-    app.get "/portraits", (req, res) ->
-      images.read 'portrait', (err, images) ->
-        res.render 'home', {images, page:'portraits'}
-
     app.get "/bookings", (req, res) ->
       images.read 'booking', (err, images) ->
         res.render 'book', {images, page:'book chelsea'}
@@ -55,6 +47,11 @@ exports.createServer =  ->
       page = req.params.client?.toLowerCase()
       images.read "client/#{page}", (err, images) ->
         res.render 'client', {images, page}
+
+    app.get "/:folder", (req, res) ->
+      images.read req.params.folder, (err, images) ->
+        res.render 'home', {images, page:req.params.folder}
+
 
 
 
