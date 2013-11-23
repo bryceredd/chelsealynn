@@ -12,16 +12,25 @@
 		02015F60184127A700DD083F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02015F5F184127A700DD083F /* UIKit.framework */; };
 		02015F66184127A700DD083F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02015F64184127A700DD083F /* InfoPlist.strings */; };
 		02015F68184127A700DD083F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F67184127A700DD083F /* main.m */; };
-		02015F6C184127A700DD083F /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F6B184127A700DD083F /* RFAppDelegate.m */; };
-		02015F6F184127A700DD083F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02015F6D184127A700DD083F /* Main_iPhone.storyboard */; };
-		02015F72184127A700DD083F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02015F70184127A700DD083F /* Main_iPad.storyboard */; };
-		02015F75184127A700DD083F /* RFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F74184127A700DD083F /* RFViewController.m */; };
 		02015F77184127A700DD083F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02015F76184127A700DD083F /* Images.xcassets */; };
 		02015F7E184127A700DD083F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02015F7D184127A700DD083F /* XCTest.framework */; };
 		02015F7F184127A700DD083F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02015F5B184127A700DD083F /* Foundation.framework */; };
 		02015F80184127A700DD083F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02015F5F184127A700DD083F /* UIKit.framework */; };
 		02015F88184127A700DD083F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02015F86184127A700DD083F /* InfoPlist.strings */; };
 		02015F8A184127A700DD083F /* ChelseaLynnPortraitsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F89184127A700DD083F /* ChelseaLynnPortraitsTests.m */; };
+		02015FAA184127CD00DD083F /* RFQuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F94184127CD00DD083F /* RFQuoteCell.m */; };
+		02015FAB184127CD00DD083F /* RFChallengeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F96184127CD00DD083F /* RFChallengeCell.m */; };
+		02015FAC184127CD00DD083F /* RFChallengeItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F98184127CD00DD083F /* RFChallengeItemCell.m */; };
+		02015FAD184127CD00DD083F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02015F99184127CD00DD083F /* MainStoryboard_iPhone.storyboard */; };
+		02015FAE184127CD00DD083F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02015F9A184127CD00DD083F /* MainStoryboard_iPad.storyboard */; };
+		02015FAF184127CD00DD083F /* RFRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F9C184127CD00DD083F /* RFRootViewController.m */; };
+		02015FB0184127CD00DD083F /* RFDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015F9E184127CD00DD083F /* RFDayCell.m */; };
+		02015FB1184127CD00DD083F /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 02015F9F184127CD00DD083F /* Model.xcdatamodel */; };
+		02015FB2184127CD00DD083F /* Challenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015FA1184127CD00DD083F /* Challenge.m */; };
+		02015FB3184127CD00DD083F /* ChallengeTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015FA3184127CD00DD083F /* ChallengeTask.m */; };
+		02015FB4184127CD00DD083F /* RFCoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015FA5184127CD00DD083F /* RFCoreDataModel.m */; };
+		02015FB5184127CD00DD083F /* RFChallengeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015FA7184127CD00DD083F /* RFChallengeService.m */; };
+		02015FB6184127CD00DD083F /* RFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 02015FA9184127CD00DD083F /* RFAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,18 +52,35 @@
 		02015F65184127A700DD083F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02015F67184127A700DD083F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		02015F69184127A700DD083F /* ChelseaLynnPortraits-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChelseaLynnPortraits-Prefix.pch"; sourceTree = "<group>"; };
-		02015F6A184127A700DD083F /* RFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFAppDelegate.h; sourceTree = "<group>"; };
-		02015F6B184127A700DD083F /* RFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegate.m; sourceTree = "<group>"; };
-		02015F6E184127A700DD083F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		02015F71184127A700DD083F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		02015F73184127A700DD083F /* RFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RFViewController.h; sourceTree = "<group>"; };
-		02015F74184127A700DD083F /* RFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RFViewController.m; sourceTree = "<group>"; };
 		02015F76184127A700DD083F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		02015F7C184127A700DD083F /* ChelseaLynnPortraitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChelseaLynnPortraitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02015F7D184127A700DD083F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		02015F85184127A700DD083F /* ChelseaLynnPortraitsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChelseaLynnPortraitsTests-Info.plist"; sourceTree = "<group>"; };
 		02015F87184127A700DD083F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		02015F89184127A700DD083F /* ChelseaLynnPortraitsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChelseaLynnPortraitsTests.m; sourceTree = "<group>"; };
+		02015F93184127CD00DD083F /* RFQuoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuoteCell.h; sourceTree = "<group>"; };
+		02015F94184127CD00DD083F /* RFQuoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuoteCell.m; sourceTree = "<group>"; };
+		02015F95184127CD00DD083F /* RFChallengeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFChallengeCell.h; sourceTree = "<group>"; };
+		02015F96184127CD00DD083F /* RFChallengeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFChallengeCell.m; sourceTree = "<group>"; };
+		02015F97184127CD00DD083F /* RFChallengeItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFChallengeItemCell.h; sourceTree = "<group>"; };
+		02015F98184127CD00DD083F /* RFChallengeItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFChallengeItemCell.m; sourceTree = "<group>"; };
+		02015F99184127CD00DD083F /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		02015F9A184127CD00DD083F /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		02015F9B184127CD00DD083F /* RFRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFRootViewController.h; sourceTree = "<group>"; };
+		02015F9C184127CD00DD083F /* RFRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFRootViewController.m; sourceTree = "<group>"; };
+		02015F9D184127CD00DD083F /* RFDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFDayCell.h; sourceTree = "<group>"; };
+		02015F9E184127CD00DD083F /* RFDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFDayCell.m; sourceTree = "<group>"; };
+		02015F9F184127CD00DD083F /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		02015FA0184127CD00DD083F /* Challenge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Challenge.h; sourceTree = "<group>"; };
+		02015FA1184127CD00DD083F /* Challenge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenge.m; sourceTree = "<group>"; };
+		02015FA2184127CD00DD083F /* ChallengeTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeTask.h; sourceTree = "<group>"; };
+		02015FA3184127CD00DD083F /* ChallengeTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengeTask.m; sourceTree = "<group>"; };
+		02015FA4184127CD00DD083F /* RFCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFCoreDataModel.h; sourceTree = "<group>"; };
+		02015FA5184127CD00DD083F /* RFCoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFCoreDataModel.m; sourceTree = "<group>"; };
+		02015FA6184127CD00DD083F /* RFChallengeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFChallengeService.h; sourceTree = "<group>"; };
+		02015FA7184127CD00DD083F /* RFChallengeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFChallengeService.m; sourceTree = "<group>"; };
+		02015FA8184127CD00DD083F /* RFAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFAppDelegate.h; sourceTree = "<group>"; };
+		02015FA9184127CD00DD083F /* RFAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +140,12 @@
 		02015F61184127A700DD083F /* ChelseaLynnPortraits */ = {
 			isa = PBXGroup;
 			children = (
-				02015F6A184127A700DD083F /* RFAppDelegate.h */,
-				02015F6B184127A700DD083F /* RFAppDelegate.m */,
-				02015F6D184127A700DD083F /* Main_iPhone.storyboard */,
-				02015F70184127A700DD083F /* Main_iPad.storyboard */,
-				02015F73184127A700DD083F /* RFViewController.h */,
-				02015F74184127A700DD083F /* RFViewController.m */,
+				02015FBA184127D700DD083F /* UI */,
+				02015FB9184127D400DD083F /* Data */,
+				02015FB8184127D200DD083F /* Service */,
+				02015FB7184127D000DD083F /* Utilities */,
+				02015FA8184127CD00DD083F /* RFAppDelegate.h */,
+				02015FA9184127CD00DD083F /* RFAppDelegate.m */,
 				02015F76184127A700DD083F /* Images.xcassets */,
 				02015F62184127A700DD083F /* Supporting Files */,
 			);
@@ -153,6 +179,63 @@
 				02015F86184127A700DD083F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02015FB7184127D000DD083F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		02015FB8184127D200DD083F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				02015FA6184127CD00DD083F /* RFChallengeService.h */,
+				02015FA7184127CD00DD083F /* RFChallengeService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		02015FB9184127D400DD083F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				02015F9F184127CD00DD083F /* Model.xcdatamodel */,
+				02015FA0184127CD00DD083F /* Challenge.h */,
+				02015FA1184127CD00DD083F /* Challenge.m */,
+				02015FA2184127CD00DD083F /* ChallengeTask.h */,
+				02015FA3184127CD00DD083F /* ChallengeTask.m */,
+				02015FA4184127CD00DD083F /* RFCoreDataModel.h */,
+				02015FA5184127CD00DD083F /* RFCoreDataModel.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		02015FBA184127D700DD083F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				02015FBB184127DB00DD083F /* Cells */,
+				02015F99184127CD00DD083F /* MainStoryboard_iPhone.storyboard */,
+				02015F9A184127CD00DD083F /* MainStoryboard_iPad.storyboard */,
+				02015F9B184127CD00DD083F /* RFRootViewController.h */,
+				02015F9C184127CD00DD083F /* RFRootViewController.m */,
+				02015F9D184127CD00DD083F /* RFDayCell.h */,
+				02015F9E184127CD00DD083F /* RFDayCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		02015FBB184127DB00DD083F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				02015F93184127CD00DD083F /* RFQuoteCell.h */,
+				02015F94184127CD00DD083F /* RFQuoteCell.m */,
+				02015F95184127CD00DD083F /* RFChallengeCell.h */,
+				02015F96184127CD00DD083F /* RFChallengeCell.m */,
+				02015F97184127CD00DD083F /* RFChallengeItemCell.h */,
+				02015F98184127CD00DD083F /* RFChallengeItemCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02015F72184127A700DD083F /* Main_iPad.storyboard in Resources */,
+				02015FAE184127CD00DD083F /* MainStoryboard_iPad.storyboard in Resources */,
+				02015FAD184127CD00DD083F /* MainStoryboard_iPhone.storyboard in Resources */,
 				02015F77184127A700DD083F /* Images.xcassets in Resources */,
-				02015F6F184127A700DD083F /* Main_iPhone.storyboard in Resources */,
 				02015F66184127A700DD083F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,9 +337,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02015F6C184127A700DD083F /* RFAppDelegate.m in Sources */,
+				02015FB1184127CD00DD083F /* Model.xcdatamodel in Sources */,
+				02015FB3184127CD00DD083F /* ChallengeTask.m in Sources */,
+				02015FB4184127CD00DD083F /* RFCoreDataModel.m in Sources */,
+				02015FB2184127CD00DD083F /* Challenge.m in Sources */,
+				02015FAA184127CD00DD083F /* RFQuoteCell.m in Sources */,
 				02015F68184127A700DD083F /* main.m in Sources */,
-				02015F75184127A700DD083F /* RFViewController.m in Sources */,
+				02015FB0184127CD00DD083F /* RFDayCell.m in Sources */,
+				02015FAC184127CD00DD083F /* RFChallengeItemCell.m in Sources */,
+				02015FB5184127CD00DD083F /* RFChallengeService.m in Sources */,
+				02015FAB184127CD00DD083F /* RFChallengeCell.m in Sources */,
+				02015FB6184127CD00DD083F /* RFAppDelegate.m in Sources */,
+				02015FAF184127CD00DD083F /* RFRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,22 +377,6 @@
 				02015F65184127A700DD083F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		02015F6D184127A700DD083F /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				02015F6E184127A700DD083F /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		02015F70184127A700DD083F /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				02015F71184127A700DD083F /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		02015F86184127A700DD083F /* InfoPlist.strings */ = {

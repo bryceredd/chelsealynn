@@ -1,18 +1,20 @@
 //
 //  RFAppDelegate.m
-//  ChelseaLynnPortraits
+//  DummyProj
 //
-//  Created by Bryce Redd on 11/23/13.
-//  Copyright (c) 2013 Bryce Redd. All rights reserved.
+//  Created by Bryce Redd on 4/25/12.
+//  Copyright (c) 2012 Itv. All rights reserved.
 //
 
 #import "RFAppDelegate.h"
+#import "RFRootViewController.h"
+
+#import "RFMacros.h"
 
 @implementation RFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     return YES;
 }
 							
@@ -40,7 +42,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Saves changes in the application's managed object context before the application terminates.
 }
 
 @end
