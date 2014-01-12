@@ -1,5 +1,6 @@
-path = require 'path'
-fs   = require 'fs'
+path  = require 'path'
+fs    = require 'fs'
+async = require 'async'
 
 module.exports = (IMAGE_ROOT) ->
   read: (dir, cb) ->
@@ -26,5 +27,18 @@ module.exports = (IMAGE_ROOT) ->
   client
   ###
   directory: (req, res) ->
-    fs.readdir (path.join IMAGE_ROOT, req.params.directory), (err, dirs) ->
-      res.send (dirs ? []).map((dir) -> "#{req.params.directory}/#{dir}")
+
+    readdirNoError = (dir, cb) ->
+      fs.readdir dir, (err, files) ->
+        cb null, files
+
+    async.concat [
+      (path.join IMAGE_ROOT, 'tabs', req.params.directory)
+      (path.join IMAGE_ROOT, req.params.directory)
+    ], readdirNoError, (err, images) ->
+      res.send (images ? []).map (image) -> "#{req.params.directory}/#{image}"
+
+
+  directories: (req, res) ->
+    fs.readdir (path.join IMAGE_ROOT, 'tabs'), (err, dirs) ->
+      res.send dirs

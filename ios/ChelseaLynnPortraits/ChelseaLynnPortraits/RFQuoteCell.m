@@ -17,11 +17,11 @@
 
 @implementation RFQuoteCell
 
-- (void)setChallenge:(Challenge *)challenge {
+/*- (void)setChallenge:(Challenge *)challenge {
     _challenge = challenge;
     
     self.quoteLabel.text = challenge.quote;
     self.creditLabel.text = challenge.quoteCredit;
-}
+}*/
 
 @end

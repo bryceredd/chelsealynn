@@ -1,9 +1,8 @@
 platform :ios, :deployment_target => '6.0'
 
 pod 'RFLibrary',     	:git => 'git@github.com:bryceredd/RFLibrary.git'
-pod 'ReactiveCocoa', 	'~> 2.1.7'
+pod 'ReactiveCocoa', '~> 2.1.7'
 pod 'ReactiveCocoaLayout', '~> 0.4'
 pod 'ReactiveViewModel', '~> 0.1.1'
-pod 'AFNetworking-RACExtensions', '~> 0.1.2'
 pod 'AFNetworking', '~> 2.0.3'
 

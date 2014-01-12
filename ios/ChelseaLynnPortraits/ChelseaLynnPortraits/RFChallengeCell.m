@@ -16,10 +16,5 @@
 
 @implementation RFChallengeCell
 
-- (void)setChallenge:(Challenge *)challenge {
-    _challenge = challenge;
-    
-    self.challengeLabel.text = self.challenge.challenge;
-}
 
 @end

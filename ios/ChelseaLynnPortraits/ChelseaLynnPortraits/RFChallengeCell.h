@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Challenge.h"
 
 @interface RFChallengeCell : UITableViewCell
 
-@property (nonatomic) Challenge* challenge;
 
 @end

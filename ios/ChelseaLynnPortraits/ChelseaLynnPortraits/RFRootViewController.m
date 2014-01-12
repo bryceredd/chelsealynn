@@ -7,13 +7,14 @@
 //
 
 #import "RFRootViewController.h"
-#import "RFDayCell.h"
-#import "RFChallengeService.h"
+#import "RFDirectoryCell.h"
+#import "ChelseaLynnApi.h"
 #import "RFMacros.h"
+#import "RFDirectoriesViewModel.h"
 
 @interface RFRootViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property(nonatomic, strong) NSArray* challenges;
+@property (nonatomic) RFDirectoriesViewModel* viewmodel;
 @end
 
 @implementation RFRootViewController
@@ -21,42 +22,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[RFChallengeService new] fetchNewChallenges:^(NSArray* array) {
-        self.challenges = array;
+    [RACObserve(self, viewmodel.directories) subscribeNext:^(id _) {
+        [self.collectionView reloadData];
     }];
     
     UICollectionViewFlowLayout* layout = (id)[self.collectionView collectionViewLayout];
     layout.minimumInteritemSpacing = 0.f;
     layout.minimumLineSpacing = 0.f;
-}
-
-- (void) setChallenges:(NSArray *)array {
-    _challenges = array;
-    [self.collectionView reloadData];
+    layout.sectionInset = UIEdgeInsetsZero;
+    layout.itemSize = self.collectionView.bounds.size;
 }
 
 
 #pragma mark - UICollectionView Datasource
 
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return self.challenges.count;
+    return self.viewmodel.directoryCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RFDayCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RFDayCell" forIndexPath:indexPath];
-    cell.challenge = self.challenges[indexPath.row];
+    RFDirectoryCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RFDirectoryCell" forIndexPath:indexPath];
+    cell.directory = [self.viewmodel directoryAtIndex:indexPath.row];
     return cell;
-}
-
-
-#pragma mark – UICollectionViewDelegateFlowLayout
-
-- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.collectionView.bounds.size;
-}
-
-- (UIEdgeInsets) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsZero;
 }
 
 
@@ -65,7 +52,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scroll {
     float pixelsToNudge = 100;
     
-    for (RFDayCell* cell in [self.collectionView visibleCells]) {
+    for (RFDirectoryCell* cell in [self.collectionView visibleCells]) {
         float distFromContentOffset = scroll.contentOffset.x - cell.frame.origin.x;
         float percentOnScreen = distFromContentOffset / self.collectionView.frame.size.width;
         [cell nudgeImage:percentOnScreen*pixelsToNudge];

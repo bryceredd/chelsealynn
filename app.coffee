@@ -22,6 +22,7 @@ exports.createServer =  ->
     app.use coffeepot 'static'
     app.use express.static __dirname + '/static'
 
+    app.get "/directories", images.directories
     app.get "/client/:client/zip", images.zip
     app.get "/image/:directory/:file", images.fetch
     app.get "/image/:directory", images.directory

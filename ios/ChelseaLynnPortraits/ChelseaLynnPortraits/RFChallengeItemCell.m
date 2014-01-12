@@ -20,8 +20,8 @@
 - (IBAction)toggleChallenge:(id)sender {
 }
 
-- (void)setTask:(ChallengeTask *)task {
+/*- (void)setTask:(ChallengeTask *)task {
     _task = task;
-}
+}*/
 
 @end
