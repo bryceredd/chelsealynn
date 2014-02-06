@@ -24,7 +24,6 @@ module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
     size = "#{req.params.width}x#{req.params.height}"
     func url, size, (err, file) ->
       return res.send err, 500 if err?
-      console.log "output file: ", file
       res.contentType file
       res.sendfile file
 
@@ -33,8 +32,8 @@ module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
 
   fitImage = (url, size, cb) ->
     dest = pathForImage url, size, "fit"
-    console.log "url: #{url} to dest #{dest}"
     ensureDoesntExist dest, cb, ->
+      console.log "url: #{url} to dest #{dest}"
       imagemagick.convert [url, "-resize", size, dest], (err, metadata) ->
         cb err, dest
 
@@ -42,7 +41,7 @@ module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
     [width, height] = size.split "x"
     dest = pathForImage url, size, "crop"
     ensureDoesntExist dest, cb, ->
-
+      console.log "url: #{url} to dest #{dest}"
       imagemagick.convert [url, "-resize", size+"^", "-gravity", "north",  "-extent", size, dest], (err, metadata) ->
         cb err, dest
 

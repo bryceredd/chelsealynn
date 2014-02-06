@@ -11,49 +11,60 @@
 #import "ChelseaLynnApi.h"
 #import "UIImageView+AFNetworking.h"
 
-#import "RFQuoteCell.h"
-#import "RFChallengeCell.h"
-#import "RFChallengeItemCell.h"
-
 @interface RFDirectoryCell()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageLeadingContraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint* imageWidthContraint;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *shadowedLabels;
 @end
 
 @implementation RFDirectoryCell
 
 - (void) awakeFromNib {
-    for (UIView* view in @[]) {
-        /*view.layer.shadowColor = [UIColor blackColor].CGColor;
+    for (UIView* view in self.shadowedLabels) {
+        view.layer.shadowColor = [UIColor blackColor].CGColor;
         view.layer.shadowRadius = 3.f;
         view.layer.shadowOffset = CGSizeZero;
         view.layer.shadowOpacity = 1.f;
         view.layer.rasterizationScale = [UIScreen mainScreen].scale;
-        view.layer.shouldRasterize = YES;*/
+        view.layer.shouldRasterize = YES;
     }
     
-    //RAC(self.imageView, image) =
-}
-
-- (void)setDirectory:(Directory*)directory {
-    _directory = directory;
+    RAC(self.name, text) = RACObserve(self, directory.name);
+    RAC(self.imageView, image) = RACObserve(self, directory.image);
     
-    /*[self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:self.challenge.imageUrl] placeholderImage:nil success:^(NSURLRequest* request, NSHTTPURLResponse* response, UIImage* image) {
-        
-        if (!image.size.width || !image.size.height)
-            return;
-        
-        float ratio = image.size.width / image.size.height;
-        float width = self.frame.size.height * ratio;
-        float x = (self.frame.size.width - width) / 2.f;
-        
-        self.imageWidthContraint.constant = width;
-        self.imageLeadingContraint.constant = x;
-        
+    RACSignal* imageRatio = [[RACObserve(self.imageView, image) notNil] map:^NSNumber*(UIImage* image) {
+       return @(image.size.width / image.size.height);
+    }];
+    
+    RACSignal* imageWidth = [[RACObserve(self.imageView, image) notNil] map:^NSNumber*(UIImage* image) {
+        return @(image.size.width);
+    }];
+    
+    RACSignal* frameWidth = [RACObserve(self, frame) map:^NSNumber*(NSValue* value) {
+        return @(value.CGRectValue.size.height);
+    }];
+    
+    RACSignal* frameHeight = [RACObserve(self, frame) map:^NSNumber*(NSValue* value) {
+        return @(value.CGRectValue.size.height);
+    }];
+    
+    RAC(self, imageWidthContraint.constant) = [RACSignal combineLatest:@[frameHeight, imageRatio] reduce:^(NSNumber* frameHeight, NSNumber* imageRatio) {
+        return @(frameHeight.floatValue * imageRatio.floatValue);
+    }];
+    
+    RAC(self, imageLeadingContraint.constant) = [RACSignal combineLatest:@[frameWidth, imageWidth] reduce:^(NSNumber* frameWidth, NSNumber* imageWidth) {
+        return @((frameWidth.floatValue - imageWidth.floatValue) / 2.f);
+    }];
+    
+    [RACObserve(self, imageWidthContraint.constant) subscribeNext:^(id _) {
         [self updateConstraintsIfNeeded];
-        
-    } failure:nil];*/
+    }];
+    
+    [RACObserve(self, imageLeadingContraint.constant) subscribeNext:^(id _) {
+        [self updateConstraintsIfNeeded];
+    }];
 }
 
 - (void) nudgeImage:(float)pixels {
@@ -66,6 +77,5 @@
     
     setFrameX(self.imageView, x + pixels);
 }
-
 
 @end

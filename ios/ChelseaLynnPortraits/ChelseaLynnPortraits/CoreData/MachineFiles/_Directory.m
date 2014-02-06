@@ -4,7 +4,6 @@
 #import "_Directory.h"
 
 const struct DirectoryAttributes DirectoryAttributes = {
-	.imageData = @"imageData",
 	.name = @"name",
 };
 
@@ -44,13 +43,6 @@ const struct DirectoryFetchedProperties DirectoryFetchedProperties = {
 
 	return keyPaths;
 }
-
-
-
-
-@dynamic imageData;
-
-
 
 
 

@@ -11,10 +11,11 @@
 #import "ChelseaLynnApi.h"
 #import "RFMacros.h"
 #import "RFDirectoriesViewModel.h"
+#import "RFDirectoryBrowserViewController.h"
 
 @interface RFRootViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic) RFDirectoriesViewModel* viewmodel;
+@property (nonatomic) IBOutlet RFDirectoriesViewModel* viewmodel;
 @end
 
 @implementation RFRootViewController
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [RACObserve(self, viewmodel.directories) subscribeNext:^(id _) {
+    [RACObserve(self, viewmodel.model) subscribeNext:^(id _) {
         [self.collectionView reloadData];
     }];
     
@@ -33,6 +34,11 @@
     layout.itemSize = self.collectionView.bounds.size;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    RFDirectoryBrowserViewController* controller = segue.destinationViewController;
+    controller.viewmodel = sender;
+}
+
 
 #pragma mark - UICollectionView Datasource
 
@@ -41,13 +47,24 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RFDirectoryCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"RFDirectoryCell" forIndexPath:indexPath];
+    NSString* reuseIdentifier = [self.viewmodel typeOfCellForIndex:indexPath.row];
+    RFDirectoryCell *cell = [cv dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.directory = [self.viewmodel directoryAtIndex:indexPath.row];
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RFDirectoryViewModel* directoryViewModel = [self.viewmodel directoryAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"to_directory" sender:directoryViewModel];;
+}
+
 
 #pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scroll {
     float pixelsToNudge = 100;

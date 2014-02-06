@@ -7,27 +7,40 @@
 //
 
 #import "RFDirectoriesViewModel.h"
+#import "RFDirectoryViewModel.h"
 #import "ChelseaLynnApi.h"
+#import "Image.h"
+#import "Directory.h"
 
 @implementation RFDirectoriesViewModel
 
-- (instancetype)init {
-    self = [super init];
+- (void)awakeFromNib {
     
-    RAC(self, model) = [[[ChelseaLynnApi directories] logError] catchTo:[RACSignal empty]];
     
-    return self;
+    // extra pages that are hard coded
+    RACSignal* hardcodedValues = [RACSignal return:@[[Directory objectWithObject:@{@"name":@"home"}]]];
+    
+    RAC(self, model) = [RACSignal
+                        combineLatest:@[[ChelseaLynnApi directories], hardcodedValues]
+                        reduce:^id(NSArray* directoriesFromApi, NSArray* directoriesFromBinary) {
+                            return [directoriesFromBinary arrayByAddingObjectsFromArray:directoriesFromApi];
+                        }];
+    
 }
 
 - (NSInteger) directoryCount {
-    return self.directories.count;
+    return self.model.count;
 }
 
-- (Directory*) directoryAtIndex:(NSInteger)index {
-    if(index < 0 || index > self.directories.count - 1)
+- (NSString*) typeOfCellForIndex:(NSInteger)index {
+    return index == 0? @"RFClientCell" : @"RFDirectoryCell";
+}
+
+- (RFDirectoryViewModel*) directoryAtIndex:(NSInteger)index {
+    if(index < 0 || index > self.model.count - 1)
         return nil;
     
-    return self.directories[index];
+    return [[RFDirectoryViewModel alloc] initWithModel:self.model[index]];
 }
 
 @end

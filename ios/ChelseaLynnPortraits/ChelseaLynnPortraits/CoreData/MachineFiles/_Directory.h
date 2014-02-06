@@ -5,7 +5,6 @@
 
 
 extern const struct DirectoryAttributes {
-	__unsafe_unretained NSString *imageData;
 	__unsafe_unretained NSString *name;
 } DirectoryAttributes;
 
@@ -20,7 +19,6 @@ extern const struct DirectoryFetchedProperties {
 
 
 
-
 @interface DirectoryID : NSManagedObjectID {}
 @end
 
@@ -29,16 +27,6 @@ extern const struct DirectoryFetchedProperties {
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (DirectoryID*)objectID;
-
-
-
-
-
-@property (nonatomic, strong) NSData* imageData;
-
-
-
-//- (BOOL)validateImageData:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -74,12 +62,6 @@ extern const struct DirectoryFetchedProperties {
 @end
 
 @interface _Directory (CoreDataGeneratedPrimitiveAccessors)
-
-
-- (NSData*)primitiveImageData;
-- (void)setPrimitiveImageData:(NSData*)value;
-
-
 
 
 - (NSString*)primitiveName;

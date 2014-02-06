@@ -4,8 +4,9 @@
 #import "_Image.h"
 
 const struct ImageAttributes ImageAttributes = {
-	.imageData = @"imageData",
+	.largeImageData = @"largeImageData",
 	.name = @"name",
+	.smallImageData = @"smallImageData",
 };
 
 const struct ImageRelationships ImageRelationships = {
@@ -48,7 +49,7 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 
 
 
-@dynamic imageData;
+@dynamic largeImageData;
 
 
 
@@ -56,6 +57,13 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 
 
 @dynamic name;
+
+
+
+
+
+
+@dynamic smallImageData;
 
 
 

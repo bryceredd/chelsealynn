@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Directory.h"
+#import "RFDirectoryViewModel.h"
 
 @interface RFDirectoryCell : UICollectionViewCell
 
-@property (nonatomic) Directory* directory;
+@property (nonatomic) RFDirectoryViewModel* directory;
 
 - (void) nudgeImage:(float)pixels;
 @end

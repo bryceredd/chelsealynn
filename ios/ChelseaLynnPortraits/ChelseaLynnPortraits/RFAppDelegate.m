@@ -8,7 +8,7 @@
 
 #import "RFAppDelegate.h"
 #import "RFRootViewController.h"
-
+#import "DDPersist.h"
 #import "RFMacros.h"
 
 @implementation RFAppDelegate

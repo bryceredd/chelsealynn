@@ -11,14 +11,19 @@
 #import "Image.h"
 #import "TVService.h"
 #import "NSManagedObject+TVJSON.h"
+#import "DDPersist.h"
+
+
+@interface RACSignal(ClassMapper)
+- (RACSignal*) mapToClass:(Class)klass;
+@end
+
 
 @implementation ChelseaLynnApi
 
-#ifdef DEBUG
-NSString* baseUrl = @"localhost:2442";
-#else
-NSString* baseUrl = @"chelsealynnportraits.com";
-#endif
++ (void) load {
+    [DDPersist initializeFromModel:@"Model"];
+}
 
 
 + (RACSignal*) directories {
@@ -26,35 +31,35 @@ NSString* baseUrl = @"chelsealynnportraits.com";
 }
 
 + (RACSignal*) imagesForDirectory:(NSString*)directoryName {
-    return [self get:[NSString stringWithFormat:@"image/%@", directoryName] class:[Image class]];
+    return [[self get:[NSString stringWithFormat:@"image/%@", directoryName] class:[Image class]] map:^NSOrderedSet*(NSArray* array) {
+        return [NSOrderedSet orderedSetWithArray:array];
+    }];
 }
-
-
-// helper function
 
 + (RACSignal*) image:(NSString*)image {
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@", baseUrl, image]];
-    
-    return [[NSURLConnection rac_sendAsynchronousRequest:[NSURLRequest requestWithURL:url]]
-            map:^id(NSData* data) {
-                return [UIImage imageWithData:data];
-            }];
+    return [TVService image:image];
 }
 
-+ (RACSignal*) get:(NSString*)get class:(Class)klass {
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@", baseUrl, get]];
-    
-    return [[[[[[NSURLConnection
-                 rac_sendAsynchronousRequest:[NSURLRequest requestWithURL:url]]
-                map:^id(NSData* data) {
-                    return[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                }]
-               deliverOn:[RACScheduler mainThreadScheduler]]
-              map:^id(id json) {
-                  return [klass objectWithObject:json];
-              }]
-             publish]
-            autoconnect];
+// helper
++ (RACSignal*) get:(NSString*)path class:(Class)klass {
+    return [[[TVService get:path] map:^NSArray*(NSArray* value) {
+        return [[[value rac_sequence] map:^(NSString* directoryName) {
+            return @{@"name":directoryName};
+        }] array];
+    }] mapToClass:klass];
+}
+
+@end
+
+@implementation RACSignal(TVGuideAPI)
+
+- (RACSignal*) mapToClass:(Class)class {
+    return [[[self
+              deliverOn:RACScheduler.mainThreadScheduler]
+             map:^id(id value) {
+                 return [class objectWithObject:value];
+             }]
+            replayLazily];
 }
 
 @end

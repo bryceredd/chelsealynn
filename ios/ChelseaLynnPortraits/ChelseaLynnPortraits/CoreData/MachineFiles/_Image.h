@@ -5,8 +5,9 @@
 
 
 extern const struct ImageAttributes {
-	__unsafe_unretained NSString *imageData;
+	__unsafe_unretained NSString *largeImageData;
 	__unsafe_unretained NSString *name;
+	__unsafe_unretained NSString *smallImageData;
 } ImageAttributes;
 
 extern const struct ImageRelationships {
@@ -17,6 +18,7 @@ extern const struct ImageFetchedProperties {
 } ImageFetchedProperties;
 
 @class Directory;
+
 
 
 
@@ -34,11 +36,11 @@ extern const struct ImageFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSString* imageData;
+@property (nonatomic, strong) NSData* largeImageData;
 
 
 
-//- (BOOL)validateImageData:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateLargeImageData:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -49,6 +51,16 @@ extern const struct ImageFetchedProperties {
 
 
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
+
+
+
+
+
+@property (nonatomic, strong) NSData* smallImageData;
+
+
+
+//- (BOOL)validateSmallImageData:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -71,14 +83,20 @@ extern const struct ImageFetchedProperties {
 @interface _Image (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString*)primitiveImageData;
-- (void)setPrimitiveImageData:(NSString*)value;
+- (NSData*)primitiveLargeImageData;
+- (void)setPrimitiveLargeImageData:(NSData*)value;
 
 
 
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
+
+
+
+
+- (NSData*)primitiveSmallImageData;
+- (void)setPrimitiveSmallImageData:(NSData*)value;
 
 
 

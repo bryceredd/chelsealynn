@@ -1,19 +1,19 @@
 #import "Directory.h"
+#import "ChelseaLynnApi.h"
 
 
 @interface Directory ()
-
-// Private interface goes here.
-
 @end
 
 
 @implementation Directory
 
-@dynamic image;
++ (NSString *)uniqueIdKey {
+    return @"name";
+}
 
-- (RACSignal *)image {
-    return  nil;
+- (void) fetchImages {
+    [self fetchForKey:@"images" stream:[ChelseaLynnApi imagesForDirectory:self.name]];
 }
 
 @end
