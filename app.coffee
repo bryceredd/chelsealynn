@@ -2,7 +2,7 @@ config    = require './config'
 express   = require 'express'
 coffeepot = require 'coffeepot'
 stylus    = require 'stylus'
-zip       = require 'express-zip'
+zip       = require './libs/zip/express-zip'
 
 ##
 # createServer takes in an optional config to stub our dependcies of the app as needed

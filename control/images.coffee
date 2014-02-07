@@ -18,6 +18,7 @@ module.exports = (IMAGE_ROOT) ->
     client = req.params.client 
     dir = "/client/#{client}/"
     fs.readdir (path.join IMAGE_ROOT, dir), (err, files) ->
+      console.log "ERROR: #{err} files: #{files}"
       res.zip ({path: path.join(IMAGE_ROOT, dir, file), name: file} for file in files)
 
   ### 
