@@ -20,7 +20,7 @@
 - (instancetype)initWithModel:(Image*)model {
     self = [super initWithModel:model];
     
-    RAC(self, image) = [[model fetchSmallImage] dataToImage];
+    RAC(self, image) = [RACObserve(model, smallImageData) dataToImage];
     
     return self;
 }

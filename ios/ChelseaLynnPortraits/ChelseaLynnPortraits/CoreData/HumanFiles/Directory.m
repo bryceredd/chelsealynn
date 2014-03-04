@@ -13,7 +13,7 @@
 }
 
 - (void) fetchImages {
-    [self fetchForKey:@"images" stream:[ChelseaLynnApi imagesForDirectory:self.name]];
+    [[ChelseaLynnApi imagesForDirectory:self.name] setKeyPath:@keypath(self, images) onObject:self];
 }
 
 @end

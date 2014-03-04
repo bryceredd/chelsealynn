@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Bryce Redd. All rights reserved.
 //
 
-#import "RFDirectoriesViewModel.h"
+#import "RFRootViewModel.h"
 #import "RFDirectoryViewModel.h"
 #import "ChelseaLynnApi.h"
 #import "Image.h"
 #import "Directory.h"
 
-@implementation RFDirectoriesViewModel
+@implementation RFRootViewModel
 
 - (void)awakeFromNib {
     

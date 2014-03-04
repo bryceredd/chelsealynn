@@ -25,7 +25,6 @@
     [DDPersist initializeFromModel:@"Model"];
 }
 
-
 + (RACSignal*) directories {
     return [self get:@"directories" class:[Directory class]];
 }

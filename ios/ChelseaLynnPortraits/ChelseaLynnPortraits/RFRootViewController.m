@@ -10,12 +10,12 @@
 #import "RFDirectoryCell.h"
 #import "ChelseaLynnApi.h"
 #import "RFMacros.h"
-#import "RFDirectoriesViewModel.h"
+#import "RFRootViewModel.h"
 #import "RFDirectoryBrowserViewController.h"
 
 @interface RFRootViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic) IBOutlet RFDirectoriesViewModel* viewmodel;
+@property (nonatomic) IBOutlet RFRootViewModel* viewmodel;
 @end
 
 @implementation RFRootViewController
@@ -54,7 +54,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     RFDirectoryViewModel* directoryViewModel = [self.viewmodel directoryAtIndex:indexPath.row];
     [self performSegueWithIdentifier:@"to_directory" sender:directoryViewModel];;
 }

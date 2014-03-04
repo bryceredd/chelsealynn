@@ -37,9 +37,10 @@ module.exports = (IMAGE_ROOT) ->
       (path.join IMAGE_ROOT, 'tabs', req.params.directory)
       (path.join IMAGE_ROOT, req.params.directory)
     ], readdirNoError, (err, images) ->
+      images = images.filter (img) -> img isnt '.DS_Store'
       res.send (images ? []).map (image) -> "#{req.params.directory}/#{image}"
 
 
   directories: (req, res) ->
     fs.readdir (path.join IMAGE_ROOT, 'tabs'), (err, dirs) ->
-      res.send dirs
+      res.send dirs.filter (dir) -> dir isnt '.DS_Store'

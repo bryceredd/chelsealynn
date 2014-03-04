@@ -8,8 +8,12 @@
 
 #import "ReactiveCocoa.h"
 
+#define RFTakeFirst(TARGET, KEYPATH)
+
 @interface RACSignal (RFCommonSignals)
 
+- (void) setToKeypathOnce:(NSString*)keypath;
+    
 // maps an incoming signal to an nsnumber
 - (RACSignal*) truthy;
 

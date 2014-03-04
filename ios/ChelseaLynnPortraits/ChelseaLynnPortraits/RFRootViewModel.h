@@ -9,7 +9,7 @@
 #import "RVMViewModel.h"
 #import "RFDirectoryViewModel.h"
 
-@interface RFDirectoriesViewModel : RVMViewModel
+@interface RFRootViewModel : RVMViewModel
 @property (nonatomic, readonly) NSArray* model;
 - (NSString*) typeOfCellForIndex:(NSInteger)index;
 - (NSInteger) directoryCount;

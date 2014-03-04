@@ -51,7 +51,7 @@ exports.createServer =  ->
 
     app.get "/:folder", (req, res) ->
       images.read req.params.folder, (err, images) ->
-        res.render 'home', {images, page:req.params.folder}
+        res.render 'category', {images, page:req.params.folder}
 
 
 

@@ -10,6 +10,14 @@
 
 @implementation RACSignal (RFCommonSignals)
 
+- (void) setToKeypathOnce:(NSString*)keypath {
+    @weakify(self);
+    [[[self notNil] take:1] subscribeNext:^(id x) {
+        @strongify(self);
+        [self setValue:x forKeyPath:keypath];
+    }];
+}
+
 - (RACSignal*) truthy {
     return [self map:^(id item) {
         if([item isKindOfClass:[NSNumber class]]) {

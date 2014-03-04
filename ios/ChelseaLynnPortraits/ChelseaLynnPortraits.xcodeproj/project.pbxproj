@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		000E67830C65476D904B1D57 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 455FEE7C672D4CA9904DD112 /* libPods.a */; };
-		0200233F18836A9C0079889F /* NSObject+RFCacheableStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 0200233E18836A9C0079889F /* NSObject+RFCacheableStream.m */; };
 		02002342188395EA0079889F /* NSString+TVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 02002341188395EA0079889F /* NSString+TVAdditions.m */; };
 		020023451884624A0079889F /* RFClientCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 020023441884624A0079889F /* RFClientCell.m */; };
 		02015F5C184127A700DD083F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02015F5B184127A700DD083F /* Foundation.framework */; };
@@ -39,7 +38,7 @@
 		0228108218935E820090F167 /* RFPanningImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0228108118935E820090F167 /* RFPanningImageCell.m */; };
 		022810851893605C0090F167 /* RFImageCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 022810841893605C0090F167 /* RFImageCellViewModel.m */; };
 		029810BC1882311A0008AC6C /* NSManagedObject+TVJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810BB1882311A0008AC6C /* NSManagedObject+TVJSON.m */; };
-		029810BF188232470008AC6C /* RFDirectoriesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810BE188232470008AC6C /* RFDirectoriesViewModel.m */; };
+		029810BF188232470008AC6C /* RFRootViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810BE188232470008AC6C /* RFRootViewModel.m */; };
 		029810C41882333C0008AC6C /* NSManagedObject+RFLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810C11882333C0008AC6C /* NSManagedObject+RFLibrary.m */; };
 		029810C51882333C0008AC6C /* NSObject+TVProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810C31882333C0008AC6C /* NSObject+TVProperties.m */; };
 		029810CA1882334D0008AC6C /* DDPersist.m in Sources */ = {isa = PBXBuildFile; fileRef = 029810C71882334D0008AC6C /* DDPersist.m */; };
@@ -61,8 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0200233D18836A9C0079889F /* NSObject+RFCacheableStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+RFCacheableStream.h"; path = "CoreData/NSObject+RFCacheableStream.h"; sourceTree = "<group>"; };
-		0200233E18836A9C0079889F /* NSObject+RFCacheableStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+RFCacheableStream.m"; path = "CoreData/NSObject+RFCacheableStream.m"; sourceTree = "<group>"; };
 		02002340188395EA0079889F /* NSString+TVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TVAdditions.h"; sourceTree = "<group>"; };
 		02002341188395EA0079889F /* NSString+TVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TVAdditions.m"; sourceTree = "<group>"; };
 		020023431884624A0079889F /* RFClientCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFClientCell.h; sourceTree = "<group>"; };
@@ -111,8 +108,8 @@
 		022810841893605C0090F167 /* RFImageCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFImageCellViewModel.m; sourceTree = "<group>"; };
 		029810BA1882311A0008AC6C /* NSManagedObject+TVJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+TVJSON.h"; sourceTree = "<group>"; };
 		029810BB1882311A0008AC6C /* NSManagedObject+TVJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+TVJSON.m"; sourceTree = "<group>"; };
-		029810BD188232470008AC6C /* RFDirectoriesViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFDirectoriesViewModel.h; sourceTree = "<group>"; };
-		029810BE188232470008AC6C /* RFDirectoriesViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFDirectoriesViewModel.m; sourceTree = "<group>"; };
+		029810BD188232470008AC6C /* RFRootViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFRootViewModel.h; sourceTree = "<group>"; };
+		029810BE188232470008AC6C /* RFRootViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFRootViewModel.m; sourceTree = "<group>"; };
 		029810C01882333C0008AC6C /* NSManagedObject+RFLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+RFLibrary.h"; sourceTree = "<group>"; };
 		029810C11882333C0008AC6C /* NSManagedObject+RFLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+RFLibrary.m"; sourceTree = "<group>"; };
 		029810C21882333C0008AC6C /* NSObject+TVProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TVProperties.h"; sourceTree = "<group>"; };
@@ -243,8 +240,6 @@
 				029810C71882334D0008AC6C /* DDPersist.m */,
 				02002340188395EA0079889F /* NSString+TVAdditions.h */,
 				02002341188395EA0079889F /* NSString+TVAdditions.m */,
-				0200233D18836A9C0079889F /* NSObject+RFCacheableStream.h */,
-				0200233E18836A9C0079889F /* NSObject+RFCacheableStream.m */,
 				029810D81883201C0008AC6C /* RACSignal+RFCommonSignals.h */,
 				029810D91883201C0008AC6C /* RACSignal+RFCommonSignals.m */,
 				029810D2188233810008AC6C /* RFFetchedResultsController.h */,
@@ -328,14 +323,22 @@
 		02015FD31841506C00DD083F /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				020D9F5A18B2C7910003AFF1 /* Cells */,
+				029810BD188232470008AC6C /* RFRootViewModel.h */,
+				029810BE188232470008AC6C /* RFRootViewModel.m */,
+			);
+			name = "View Models";
+			sourceTree = "<group>";
+		};
+		020D9F5A18B2C7910003AFF1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				022810831893605C0090F167 /* RFImageCellViewModel.h */,
 				022810841893605C0090F167 /* RFImageCellViewModel.m */,
-				029810BD188232470008AC6C /* RFDirectoriesViewModel.h */,
-				029810BE188232470008AC6C /* RFDirectoriesViewModel.m */,
 				029810D518831D290008AC6C /* RFDirectoryViewModel.h */,
 				029810D618831D290008AC6C /* RFDirectoryViewModel.m */,
 			);
-			name = "View Models";
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,14 +492,13 @@
 			files = (
 				029810D718831D290008AC6C /* RFDirectoryViewModel.m in Sources */,
 				0228108218935E820090F167 /* RFPanningImageCell.m in Sources */,
-				0200233F18836A9C0079889F /* NSObject+RFCacheableStream.m in Sources */,
 				02015FB1184127CD00DD083F /* Model.xcdatamodel in Sources */,
 				029810CA1882334D0008AC6C /* DDPersist.m in Sources */,
 				02015F68184127A700DD083F /* main.m in Sources */,
 				029810CB1882334D0008AC6C /* NSManagedObjectContext+DDPersist.m in Sources */,
 				020023451884624A0079889F /* RFClientCell.m in Sources */,
 				02015FD118414D0500DD083F /* Directory.m in Sources */,
-				029810BF188232470008AC6C /* RFDirectoriesViewModel.m in Sources */,
+				029810BF188232470008AC6C /* RFRootViewModel.m in Sources */,
 				0228107C189350B80090F167 /* TVService.m in Sources */,
 				02015FB0184127CD00DD083F /* RFDirectoryCell.m in Sources */,
 				029810BC1882311A0008AC6C /* NSManagedObject+TVJSON.m in Sources */,

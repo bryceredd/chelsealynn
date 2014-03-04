@@ -2,6 +2,6 @@
 #import "NSManagedObject+TVJSON.h"
 
 @interface Image : _Image <TVJSONManagedObject> {}
-- (RACSignal*) fetchLargeImage;
-- (RACSignal*) fetchSmallImage;
+- (void) fetchLargeImage;
+- (void) fetchSmallImage;
 @end
