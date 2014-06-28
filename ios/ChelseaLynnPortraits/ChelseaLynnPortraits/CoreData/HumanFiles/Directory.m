@@ -9,11 +9,11 @@
 @implementation Directory
 
 + (NSString *)uniqueIdKey {
-    return @"name";
+	return @"name";
 }
 
-- (void) fetchImages {
-    [[ChelseaLynnApi imagesForDirectory:self.name] setKeyPath:@keypath(self, images) onObject:self];
+- (void)fetchImages {
+	[[ChelseaLynnApi imagesForDirectory:self.name] setKeyPath:@keypath(self, images) onObject:self];
 }
 
 @end

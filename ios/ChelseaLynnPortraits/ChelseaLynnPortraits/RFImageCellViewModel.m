@@ -12,17 +12,17 @@
 #import "RACSignal+RFCommonSignals.h"
 
 @interface RFImageCellViewModel ()
-@property (nonatomic) Image* model;
+@property (nonatomic) Image *model;
 @end
 
 @implementation RFImageCellViewModel
 
-- (instancetype)initWithModel:(Image*)model {
-    self = [super initWithModel:model];
+- (instancetype)initWithModel:(Image *)model {
+	self = [super initWithModel:model];
     
-    RAC(self, image) = [RACObserve(model, smallImageData) dataToImage];
+	RAC(self, image) = [RACObserve(model, smallImageData) dataToImage];
     
-    return self;
+	return self;
 }
 
 @end

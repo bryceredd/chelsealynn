@@ -9,5 +9,5 @@
 #import "RVMViewModel.h"
 
 @interface RFImageCellViewModel : RVMViewModel
-@property (nonatomic) UIImage* image;
+@property (nonatomic) UIImage *image;
 @end
