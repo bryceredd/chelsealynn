@@ -99,6 +99,9 @@ h2 {
 .menu .menuImage img {
   max-height: 100px;
 }
+.menu .menuImage.slick-center {
+  border: 3px solid #a5caa0;
+}
 .book,
 .myself {
   width: 60%;
