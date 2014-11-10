@@ -61,7 +61,7 @@ body .title {
 @media (max-width: 700px) {
   body .title {
     font-size: 38px;
-    font-weight: 200;
+    font-weight: 400;
   }
 }
 h1 {
@@ -156,13 +156,9 @@ h2 {
   color: #a5caa0;
 }
 @media (max-width: 700px) {
-  .nav {
-    text-align: left;
-  }
   .nav li {
-    display: block;
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 400;
   }
 }
 .myself .images {
