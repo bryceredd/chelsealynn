@@ -15,7 +15,7 @@ $(document).ready ->
 
   $('.allImages').slick
     slidesToShow: 1
-    arrows: true
+    arrows: false
     fade: true
     centerMode: true
     adaptiveHeight: true
