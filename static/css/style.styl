@@ -15,12 +15,12 @@ opacity()
   opacity arguments
 
 transition()
-  -webkit-transition arguments 
-  -moz-transition arguments 
-  -o-transition arguments 
-  transition arguments 
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
 
-a 
+a
   text-decoration none
   color #979797
 
@@ -33,34 +33,57 @@ body
   color #666
   padding 0
   margin 0
+  min-width 320px
 
-  background-color white 
+  background-color white
 
-  .login 
+  .login
     padding 25px 25px 0 0
     position absolute
     display inline-block
     right 10px
+    top -10px
 
     input
       display none
-    a 
+    a
       display inline
 
   .login.focused
-    input 
+    input
       display inline
     a
       display none
 
+  @media (max-width: 700px)
+    .login
+      position inherit
+      padding 15px 15px 0 15px
+      float right
 
-  .title 
+      input
+        display none
+      a
+        display block
+
+    .login.focused
+      input
+        display block
+      a
+        display none
+
+  .title
     font-size 52px
     font-weight 100
     padding 0 0 10px 0
     text-align center
 
-h1 
+  @media (max-width: 700px)
+    .title
+      font-size 38px
+      font-weight 200
+
+h1
   font-weight 100
   margin-bottom 0
 
@@ -74,84 +97,37 @@ h2
 .highlight
   color highlight
 
-.content 
+.content
+  padding 0 10px 0 10px
+  margin auto
 
-  .arrow
-    background-color #00000000
-    background-image url('/img/left.png')
-    background-position center
-    background-repeat no-repeat
-    height 600px
-    position absolute
-    top 140px
-    transition all .5s ease
-    width 194px
+  .centerImage
+    margin auto
+    max-width 100%
+    max-height 600px
 
-  .arrow:hover
-    background-image url('/img/left-down.png')
-    background-color #00000011
+.menu
+  clear both
+  margin auto
+  padding 20px 0 0 0
 
-  .left.arrow
-    left 0
-
-  .right.arrow
-    right 0
-    transform scale(-1, 1)
-
-  .images
-    overflow-x hidden
-    width 100%
-
-  .allImages
-    left 0px
-    position relative
-    transition all .5s ease
-    width 200000px
+  .menuImage
+    margin 0 10px 0 10px
+    border 1px #EEE solid
 
     img
-      display inline-block
-      float left
-      height 600px
-      margin 0 40px 0 0
-      opacity .2
-      transition all .5s ease
-      border 0px #444 solid
+      max-height: 100px
 
-    img.selected
-      opacity 1
-
-.menu 
-  clear both
-  overflow-x scroll
-  overflow-y hidden
-  height 102px
-  margin auto
-  padding-top 20px
-  width 60%
-
-  .allMenu
-    left 0px
-    position relative
-    transition all .5s ease
-    width 200000px
-
-    img 
-      clear none
-      display inline-block
-      float left
-      margin 0 10px 0 10px
-      height 100px
-      border 0px #444 solid
 
 .book, .myself
   width 60%
   margin auto
 
-  img 
+  img
     float left
     padding-right 44px
 
-  ul 
+  ul
     margin 0
     padding 0
     list-style-type none
@@ -160,16 +136,16 @@ h2
   .soft
     color #AAA
 
-.client 
+.client
 
   margin auto
   width 60%
-  
+
   img
     border 0px solid #777
     margin 2px
 
-  .download 
+  .download
 
     margin 20px
     text-align center
@@ -184,33 +160,36 @@ h2
       font-weight 400
 
 
-.nav 
+.nav
   clear both
   padding 10px 0 10px 0
   text-align center
 
-  ul 
-    display block
-    list-style-type none
-    margin auto 
-    width 950px 
-    
-    li 
-      display inline
-      font-size 32px
+  li
+    display inline-block
+    font-size 32px
+    font-weight 200
+    padding 0 10px 0 10px
+
+    .active
+      color highlight
+
+@media (max-width: 700px)
+  .nav
+    text-align left
+
+    li
+      display block
+      font-size 20px
       font-weight 200
-      padding 0 10px 0 10px
 
-      .active
-        color highlight
-
-.myself 
+.myself
 
   .images
     float: right
     width: 510px
 
-    img 
+    img
       padding: 5px
 
 footer
@@ -220,4 +199,3 @@ footer
   padding-top 40px
   text-align center
   width 100%
-

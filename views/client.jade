@@ -4,9 +4,15 @@ block content
   
   .client
     .download Click the image to download the HD version
-
+    
+  .allImages
     each image in images
-      a(href="/image/#{image}")
-        img( src="/fit/100/100/#{image}" )
+      .contentImage
+        a(href="/image/#{image}")
+          img.centerImage( src="/fit/1600/1200/#{image}" )
 
-
+  .menu
+    .allMenu
+      each image in images
+        .menuImage 
+          img( src="/fit/2000/200/#{image}" )

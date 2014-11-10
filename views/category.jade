@@ -1,15 +1,14 @@
 extends layout 
 
 block content
-  .images
-    .allImages
-      each image in images
-        img( src="/fit/10000/600/#{image}" )
-
-  button.arrow.left( src="/img/left.png")
-  button.arrow.right( src="/img/left.png") 
+            
+  .allImages
+    each image in images
+      .contentImage
+        img.centerImage( src="/fit/1600/1200/#{image}" )
 
   .menu
     .allMenu
       each image in images
-        img( src="/fit/1000/100/#{image}" )
+        .menuImage 
+          img( src="/fit/2000/200/#{image}" )
