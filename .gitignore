@@ -1,4 +1,5 @@
 lib-cov
+ios
 *.seed
 *.log
 *.csv
