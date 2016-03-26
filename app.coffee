@@ -1,8 +1,8 @@
-config    = require './config'
-express   = require 'express'
-coffeepot = require 'coffeepot'
-stylus    = require 'stylus'
-zip       = require './libs/zip/express-zip'
+bodyParser = require 'body-parser'
+config     = require './config'
+express    = require 'express'
+stylus     = require 'stylus'
+zip        = require './libs/zip/express-zip'
 
 ##
 # createServer takes in an optional config to stub our dependcies of the app as needed
@@ -18,21 +18,19 @@ exports.createServer =  ->
     app.set 'views', __dirname + '/views'
 
     app.use stylus.middleware __dirname + '/static'
-    app.use express.bodyParser()
-    app.use coffeepot 'static'
+    app.use bodyParser.json()
     app.use express.static __dirname + '/static'
 
     app.get "/directories", images.directories
     app.get "/client/:client/zip", images.zip
     app.get "/image/:directory/:file", images.fetch
     app.get "/image/:directory", images.directory
-    app.get "/image/*", images.fetch
     app.get "/health", (req, res) -> res.send 200
 
     app.get '/crop/:width/:height/*', thumbnail.crop
     app.get '/fit/:width/:height/*', thumbnail.fit
 
-    app.get "/", (req, res) -> 
+    app.get "/", (req, res) ->
       images.read 'home', (err, images) ->
         res.render 'home', {images, page:'home'}
 

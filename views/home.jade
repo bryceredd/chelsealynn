@@ -1,7 +1,7 @@
-extends layout 
+extends layout
 
 block content
   .allImages
     each image in images
       .contentImage
-        img.centerImage( src="/fit/1600/1200/#{image}" )
+        img.centerImage( src="/fit/800/600/#{image}", srcset="/fit/1600/1200/#{image} 2x")

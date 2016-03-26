@@ -13,10 +13,12 @@ module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
     resize cropImage, req, res
 
   resize = (func, req, res) ->
-    loc = req.params[req.params.length - 1]
+    {'0': loc} = req.params
+    return res.sendStatus 404 unless loc
+
     url = if loc.match /http/
       encodeURI loc
-    else 
+    else
       path.join IMAGE_ROOT, loc
 
     console.log url
@@ -54,7 +56,6 @@ module.exports = (RESIZED_PHOTO_PATH, IMAGE_ROOT) ->
 
 
   return {
-    fit 
+    fit
     crop
   }
-

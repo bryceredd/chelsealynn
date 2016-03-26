@@ -9,19 +9,21 @@ module.exports = (IMAGE_ROOT) ->
         not i.match /.DS_Store/
 
   fetch: (req, res) ->
-    file = path.join IMAGE_ROOT, encodeURI req.params[req.params.length - 1]
+    console.log req.params
+    {directory, file} = req.params
+    f = path.join IMAGE_ROOT, (encodeURI directory), (encodeURI file)
 
-    res.contentType file
-    res.sendfile file
+    res.contentType f
+    res.sendfile f
 
   zip: (req, res) ->
-    client = req.params.client 
+    client = req.params.client
     dir = "/client/#{client}/"
     fs.readdir (path.join IMAGE_ROOT, dir), (err, files) ->
       console.log "ERROR: #{err} files: #{files}"
       res.zip ({path: path.join(IMAGE_ROOT, dir, file), name: file} for file in files)
 
-  ### 
+  ###
   home
   portrait
   wedding
