@@ -12,10 +12,9 @@ module.exports = (IMAGE_ROOT) ->
     console.log req.params
     {directory, file, parent} = req.params
     if parent != null
-      f = path.join IMAGE_ROOT, (encodeURI parent), (encodeURI directory), (encodeURI file)
+      f = path.join IMAGE_ROOT, parent, directory, file
     else
-      f = path.join IMAGE_ROOT, (encodeURI directory), (encodeURI file)
-
+      f = path.join IMAGE_ROOT, directory, file
     res.contentType f
     res.sendFile f
 
