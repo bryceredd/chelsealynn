@@ -5,7 +5,7 @@ module.exports = {
   start: "node_modules/coffee-script/bin/coffee app.coffee",
 
   // install
-  install: "npm install && node_modules/coffee-script/bin/coffee -c static/js/*",
+  install: "npm install && node_modules/coffee-script/bin/coffee -c static/js/*.coffee",
 
   // servers to deploy to
   servers: {
