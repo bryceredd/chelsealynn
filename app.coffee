@@ -52,8 +52,6 @@ exports.createServer =  ->
         res.render 'category', {images, page:req.params.folder}
 
 
-
-
 if module == require.main
   app = exports.createServer()
   app.listen config.get "PORT"
