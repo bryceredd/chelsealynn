@@ -10,11 +10,14 @@ module.exports = (IMAGE_ROOT) ->
 
   fetch: (req, res) ->
     console.log req.params
-    {directory, file} = req.params
-    f = path.join IMAGE_ROOT, (encodeURI directory), (encodeURI file)
+    {directory, file, parent} = req.params
+    if parent != null
+      f = path.join IMAGE_ROOT, (encodeURI parent), (encodeURI directory), (encodeURI file)
+    else
+      f = path.join IMAGE_ROOT, (encodeURI directory), (encodeURI file)
 
     res.contentType f
-    res.sendfile f
+    res.sendFile f
 
   zip: (req, res) ->
     client = req.params.client

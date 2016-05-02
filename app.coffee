@@ -23,8 +23,8 @@ exports.createServer =  ->
 
     app.get "/directories", images.directories
     app.get "/client/:client/zip", images.zip
-    app.get "/image/:directory/:file", images.fetch
     app.get "/image/:directory", images.directory
+    app.get "/image/:parent/:directory/:file", images.fetch
     app.get "/health", (req, res) -> res.send 200
 
     app.get '/crop/:width/:height/*', thumbnail.crop
@@ -59,5 +59,6 @@ if module == require.main
   app.listen config.get "PORT"
   console.log """
   Running CHELSEA_LYNN on #{config.get("PORT")}
+  RESIZED_PHOTO_PATH: #{config.get("RESIZED_PHOTO_PATH")}
   Image root: #{config.get("IMAGE_ROOT")}
   """
